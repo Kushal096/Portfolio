@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -163,7 +163,7 @@ body {
 }
 
 .aboutSection {
-    padding: 120px 20px;
+    padding: 120px 10px;
     background: #FFFFFF;
     height: 100vh;
 }
@@ -198,7 +198,7 @@ body {
 }
 
 .aboutText {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -224,7 +224,7 @@ body {
     grid-template-columns: repeat(3, 2fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 1.3rem;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 .skillBar {
@@ -316,6 +316,206 @@ body {
     height: auto;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Projects Section */
+.projectsSection {
+    padding: 120px 10px;
+    background: #F9FAFB;
+    min-height: 100vh;
+}
+
+.projectsSection h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.projectsSection h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.projectsIntro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #6B7280;
+    margin-bottom: 4rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.projectsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.projectCard {
+    background: #FFFFFF;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.projectCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.2);
+}
+
+.projectImage {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.projectImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.projectCard:hover .projectImage img {
+    transform: scale(1.05);
+}
+
+.projectOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(79, 70, 229, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.projectCard:hover .projectOverlay {
+    opacity: 1;
+}
+
+.projectLinks {
+    display: flex;
+    gap: 1rem;
+}
+
+.projectLink {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.projectLink:hover {
+    background: #FFD700;
+    color: #1F2937;
+    transform: scale(1.1);
+}
+
+.projectContent {
+    padding: 2rem;
+}
+
+.projectContent h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 1rem;
+}
+
+.projectContent p {
+    font-size: 1rem;
+    color: #6B7280;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.projectTech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.techTag {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #FFFFFF;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Design for Projects */
+@media (max-width: 768px) {
+    .projectsGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .projectCard {
+        margin: 0 1rem;
+    }
+    
+    .projectsSection {
+        padding: 80px 10px;
+    }
+    
+    .projectsSection h2 {
+        font-size: 2rem;
+    }
+    
+    .projectsIntro {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projectContent {
+        padding: 1.5rem;
+    }
+    
+    .projectContent h3 {
+        font-size: 1.3rem;
+    }
+    
+    .projectContent p {
+        font-size: 0.9rem;
+    }
+    
+    .techTag {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.6rem;
+    }
 }
 
 
