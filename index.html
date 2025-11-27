@@ -17,8 +17,13 @@
         <nav>
             <a href="#home">Home</a>
             <a href="#about">About</a>
+            <a href="#media">Media</a>
+            <a href="#gallery">Gallery</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
         </nav>
     </div>
     <section id="home" class="heroSection">
@@ -103,6 +108,102 @@
                 <div class="aboutImage">
                     <img
                         src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDVzbmpiam5zOTYydGthaWgwbTMyNTJ4YWw0MGtnbWlsNWdibmFnbiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/EZr27ZbJwmjE9PGyLN/giphy.gif">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="media" class="mediaSection">
+        <div class="container">
+            <h2>Media Showcase</h2>
+            <div class="mediaGrid">
+                <div class="mediaItem">
+                    <h3>Featured Video</h3>
+                    <video controls width="100%" preload="metadata">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>This is a sample video showcasing HTML5 video capabilities with multiple format support.</p>
+                </div>
+                
+                <div class="mediaItem">
+                    <h3>Audio Player</h3>
+                    <audio controls width="100%">
+                        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+                        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <p>Experience high-quality audio playback with HTML5 audio controls and format fallbacks.</p>
+                </div>
+                
+                <div class="mediaItem">
+                    <h3>Interactive Canvas</h3>
+                    <canvas id="interactiveCanvas" width="400" height="300"></canvas>
+                    <div class="canvasControls">
+                        <button id="clearCanvas">Clear Canvas</button>
+                        <input type="color" id="colorPicker" value="#4F46E5">
+                    </div>
+                    <p>Click and drag on the canvas to draw. Use the controls to clear or create patterns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallerySection">
+        <div class="container">
+            <h2>Project Gallery</h2>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide active">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Modern Office Setup">
+                        <div class="slide-content">
+                            <h3>Modern Development Environment</h3>
+                            <p>State-of-the-art workspace for innovative solutions</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Code on Screen">
+                        <div class="slide-content">
+                            <h3>Clean Code Architecture</h3>
+                            <p>Writing maintainable and scalable applications</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Data Analysis">
+                        <div class="slide-content">
+                            <h3>Data-Driven Insights</h3>
+                            <p>Transforming data into actionable intelligence</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Business Analytics">
+                        <div class="slide-content">
+                            <h3>Business Intelligence</h3>
+                            <p>Analytics solutions for better decision making</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Team Collaboration">
+                        <div class="slide-content">
+                            <h3>Team Collaboration</h3>
+                            <p>Building successful projects through teamwork</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="slider-btn prev" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-btn next" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <div class="slider-indicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                    <span class="indicator" data-slide="3"></span>
+                    <span class="indicator" data-slide="4"></span>
                 </div>
             </div>
         </div>
@@ -276,6 +377,10 @@
             </div>
         </div>
     </section>
+
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
