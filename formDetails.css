@@ -1,3 +1,43 @@
+:root {
+    /* Light theme colors */
+    --bg-primary: #F9FAFB;
+    --bg-secondary: #FFFFFF;
+    --bg-tertiary: #F3F4F6;
+    --text-primary: #1F2937;
+    --text-secondary: #6B7280;
+    --text-muted: #9CA3AF;
+    --accent-primary: #4F46E5;
+    --accent-secondary: #667eea;
+    --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --accent-gold: #FFD700;
+    --border-color: #E5E7EB;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --overlay-light: rgba(255, 255, 255, 0.1);
+    --overlay-medium: rgba(255, 255, 255, 0.2);
+    --card-bg: rgba(255, 255, 255, 0.9);
+}
+
+body.dark-mode {
+    /* Dark theme colors */
+    --bg-primary: #0F1419;
+    --bg-secondary: #1F2937;
+    --bg-tertiary: #374151;
+    --text-primary: #F9FAFB;
+    --text-secondary: #D1D5DB;
+    --text-muted: #9CA3AF;
+    --accent-primary: #6366F1;
+    --accent-secondary: #8B5CF6;
+    --accent-gradient: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+    --accent-gold: #FCD34D;
+    --border-color: #4B5563;
+    --shadow-light: rgba(0, 0, 0, 0.3);
+    --shadow-medium: rgba(0, 0, 0, 0.5);
+    --overlay-light: rgba(0, 0, 0, 0.3);
+    --overlay-medium: rgba(0, 0, 0, 0.5);
+    --card-bg: rgba(31, 41, 55, 0.9);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +46,14 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--accent-gradient);
     height: 100vh;
     line-height: 1.6;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #1F2937;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
 }
 
 .container {
@@ -21,28 +62,42 @@ body {
 
 .formCard {
     width: 520px;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 28px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 16px 40px var(--shadow-medium);
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--overlay-medium);
+    transition: all 0.3s ease;
 }
 
 
 h3 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #4338CA;
-    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin-bottom: 2rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
 }
 
 .detailRow {
     display: flex;
     justify-content: space-between;
-    padding: 14px 0;
-    border-bottom: 1px dashed #D1D5DB;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px dashed var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.detailRow:hover {
+    padding-left: 10px;
+    background: var(--overlay-light);
+    border-radius: 8px;
 }
 
 .detailRow:last-child {
@@ -50,60 +105,253 @@ h3 {
 }
 
 .label {
-    font-weight: 600;
-    color: #374151;
-    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .value {
-    color: #4B5563;
-    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
     max-width: 60%;
     text-align: right;
     word-wrap: break-word;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .messageBox {
-    background: #F3F4F6;
-    padding: 14px;
-    border-radius: 10px;
-    margin-top: 1.5rem;
-    font-size: 1.2;
+    background: var(--overlay-light);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 2rem;
     text-align: left;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.messageBox:hover {
+    background: var(--overlay-medium);
+    transform: translateY(-2px);
+}
+
+.messageBox .label {
+    margin-bottom: 0.8rem;
+    display: block;
 }
 
 .messageBox p {
-    color: #4B5563;
-    line-height: 2;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1rem;
+    margin: 0;
+    transition: color 0.3s ease;
 }
 
 .backBtn {
-    margin-top: 20px;
-    background: #4F46E5;
+    margin-top: 2.5rem;
+    background: var(--accent-gradient);
     color: white;
     border: none;
-    padding: 12px 22px;
-    border-radius: 8px;
-    font-size: 1.5rem;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: 0.3s;
-    width: 60%;
-    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 70%;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.backBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.backBtn:hover::before {
+    left: 100%;
 }
 
 .backBtn:hover {
-    background: #4338CA;
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.backBtn:active {
+    transform: translateY(-1px) scale(1.01);
+}
+
+/* Theme Toggle Button for Form Details Page */
+.theme-toggle {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: var(--accent-gradient);
+    border: none;
+    border-radius: 12px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px var(--shadow-light);
+    z-index: 1000;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.theme-toggle:hover::before {
+    left: 100%;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.theme-toggle i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover i {
+    transform: scale(1.1);
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(20px) scale(0.95);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.05); opacity: 1; }
+}
+
+/* Enhanced Focus Styles for Accessibility */
+.theme-toggle:focus,
+.backBtn:focus {
+    outline: 3px solid var(--accent-gold);
+    outline-offset: 2px;
+}
+
+/* Custom Selection Styles */
+::selection {
+    background: var(--accent-primary);
+    color: #FFFFFF;
+}
+
+::-moz-selection {
+    background: var(--accent-primary);
+    color: #FFFFFF;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .formCard {
+        width: 90%;
+        max-width: 450px;
+        padding: 24px;
+        margin: 20px;
+    }
+    
+    h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .label,
+    .value {
+        font-size: 1rem;
+    }
+    
+    .detailRow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 12px 0;
+    }
+    
+    .value {
+        max-width: 100%;
+        text-align: left;
+        font-weight: 400;
+    }
+    
+    .messageBox {
+        padding: 16px;
+        margin-top: 1.5rem;
+    }
+    
+    .backBtn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px 24px;
+        margin-top: 2rem;
+    }
+    
+    .theme-toggle {
+        top: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .formCard {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    h3 {
+        font-size: 1.6rem;
+    }
+    
+    .label,
+    .value {
+        font-size: 0.9rem;
+    }
+    
+    .messageBox p {
+        font-size: 0.9rem;
     }
 }
